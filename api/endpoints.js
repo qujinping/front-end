@@ -3,6 +3,7 @@
 
   var util = require('util');
 
+  var port = "8080";
   var domain = "";
   process.argv.forEach(function (val, index, array) {
     var arg = val.split("=");
@@ -15,14 +16,14 @@
   });
 
   module.exports = {
-    catalogueUrl:  util.format("http://catalogue%s", domain),
-    tagsUrl:       util.format("http://catalogue%s/tags", domain),
-    cartsUrl:      util.format("http://cart%s/carts", domain),
-    ordersUrl:     util.format("http://orders%s", domain),
-    customersUrl:  util.format("http://user%s/customers", domain),
-    addressUrl:    util.format("http://user%s/addresses", domain),
-    cardsUrl:      util.format("http://user%s/cards", domain),
-    loginUrl:      util.format("http://user%s/login", domain),
-    registerUrl:   util.format("http://user%s/register", domain),
+    catalogueUrl:  util.format("http://catalogue%s:%s", domain, port),
+    tagsUrl:       util.format("http://catalogue%s:%s/tags", domain, port),
+    cartsUrl:      util.format("http://cart%s:%s/carts", domain, port),
+    ordersUrl:     util.format("http://orders%s:%s", domain, port),
+    customersUrl:  util.format("http://user%s:%s/customers", domain, port),
+    addressUrl:    util.format("http://user%s:%s/addresses", domain, port),
+    cardsUrl:      util.format("http://user%s:%s/cards", domain, port),
+    loginUrl:      util.format("http://user%s:%s/login", domain, port),
+    registerUrl:   util.format("http://user%s:%s/register", domain, port),
   };
 }());
